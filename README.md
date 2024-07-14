@@ -27,7 +27,8 @@ Un convertisseur de documents Markdown avec IHM intégrée, triviale à déploye
 
 Méthode recommandée.
 ```bash
-TODO
+docker pull ghcr.io/picoma/md2pdf
+docker run -p 5000:5000 ghcr.io/picoma/md2pdf
 ```
 
 ### En local (pour développement)
