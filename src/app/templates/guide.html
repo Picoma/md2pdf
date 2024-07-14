@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accueil</title>
+    <link rel="stylesheet"  type="text/css" href="{{url_for('.static', filename='bootstrap.min.css')}}">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    
+    <div class="container py-3">
+        <h1 id="guide-dutilisation">Guide d’utilisation</h1>
+            <p>Ceci est votre guide ! Préformaté  en HTML, dédié au workflow de votre entreprise.</p>
+        <h2 id="utilisation-basique">Utilisation basique</h2>
+            <p>Ce guide est valable dans la plupart des cas d’utilisations : il est conçu pour être le plus simple possible.</p>
+            <ul>
+            <li>Aller dans l’onglet “Templates” pour choisir un template.</li>
+            <li>Compléter ce template</li>
+            <li>Aller dans l’onglet “Conversion” et téléverser les fichiers à convertir</li>
+            <li>Cliquer sur “Convertir” : vos PDF sont prêts !</li>
+            </ul>
+        <h2 id="guide-spécifique">Guide spécifique</h2>
+        <h3 id="template-spécifique">Template spécifique</h3>
+            <p>Par exemple, si vous offrez un template avec une utilisation spécifique (changer le nom de fichier pour intégrer un code d’identification, ajouter à la main une figure, …), ces instructions pourraient aller ici. A nouveau, c’est vous le maître !</p>
+        <h3 id="intégration">Intégration</h3>
+            <p>Pour, les fichiers sont envoyées via une requête POST, il doit donc être possible de l’intégrer à une chaine de CI/CD pour créer des documents à la volée d’un commit Git.</p>
+
+
+    </div>
+</body>
+</html>

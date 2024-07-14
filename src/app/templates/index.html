@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accueil</title>
+    <link rel="stylesheet"  type="text/css" href="{{url_for('.static', filename='bootstrap.min.css')}}">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    
+    <div class="px-4 py-5 mt-5 text-center">
+        <img class="d-block mx-auto mb-4" width="72" height="57" src="{{ url_for('static', filename='bootstrap-icons/p-square-fill.svg') }}" />
+        <h1 class="display-5 fw-bold text-body-emphasis">md2pdf</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Conversion rapide de documents écrits en md vers du pdf. Facile à déployer pour une organisation.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/templates'">Télécharger templates</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/convert'">Uploader document Markdown</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container px-4 py-5" id="hanging-icons">
+        <h2 class="pb-2 border-bottom">Features</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="col">
+                <h3 class="fs-2 text-body-emphasis">Simple</h3>
+                <p>A workflow so simple, even my boss could understand it. Download a Markdown editor (any one !), download a template and get writing. Come back when you are done, and get your PDF for distribution !</p>
+            </div>
+            <div class="col">
+                <h3 class="fs-2 text-body-emphasis">Customisable</h3>
+                <p>Your templates, your documents, your styles, your work flow. Whether are a geek curious about Markdown, want to save space by using lighter documents file, or a big corporation wanting to integrate an easy Markdown convertion tool to a bigger chain, this tool can fit your needs !</p>
+            </div>
+            <div class="col">
+                <h3 class="fs-2 text-body-emphasis">Integrable</h3>
+                <p>Not only is this app designed to use a simple interface for human, it also implements a simple interface for machines as well. Tune the flow by hand, then automate it by intergationg it to your CI/CD pipeline.</p>
+            </div>
+        </div>
+    </div>
+  
+</body>
+</html>

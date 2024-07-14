@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Upload de fichier</title>
+    <link rel="stylesheet"  type="text/css" href="{{url_for('.static', filename='bootstrap.min.css')}}">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    
+    <div class="container">
+    <main>
+        <h1 class="py-5 text-center">Conversion d'un document Markdown</h1>
+        
+        <form action="/convert" method="post" enctype="multipart/form-data" style="grid gap-0 row-gap-3">
+        
+            <div class="py-2 g-col-6">
+                <label for="tex_template_select" class="form-label">Style de document</label>
+                <select class="form-select" id="tex_template_selection" name="tex_template_selection">
+                    {% for tex_template in tex_templates %}
+                    <option value="{{ tex_template }}">{{ tex_template }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="py-2 g-col-6">
+                <label for="md_file" class="form-label">Fichier Markdown à convertir</label>
+                <input type="file" accepts=".md" required id="md_file" name="md_file" class="form-control" aria-describedby="md_file" aria-label="Fichier MD à convertir">
+            </div>
+            
+            <div class="py-2 g-col-6">
+                <label for="user_files" class="form-label">Fichiers annexes (images, ...)</label>
+                <input type="file" multiple id="user_files" name="user_files" class="form-control" aria-describedby="user_files" aria-label="Fichiers annexes">
+            </div>
+            
+            <div class="py-2 g-col-6">
+                <input class="w-100 btn btn-primary btn-lg" type="submit" value="Convertir"></input>
+            </div>
+
+        </form>
+    </main>
+    </div>
+</body>
+</html>

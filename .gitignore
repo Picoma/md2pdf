@@ -1,0 +1,11 @@
+# Virtual Environments
+.env
+.nodeenv
+
+# Node
+node_modules
+package.json
+package-lock.json
+
+# Mermaid.js & Pandoc Mermaid.js filter
+mermaid-filter.*

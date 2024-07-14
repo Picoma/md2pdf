@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Téléchargement de templates</title>
+    <link rel="stylesheet"  type="text/css" href="{{ url_for('.static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    
+    <section class="py-5 container">
+        <h1 class="text-center">Liste des templates disponibles :</h1>
+        <!-- TODO : Ajouter des previews dans des cartes -->
+        <div class="list-group">
+            {% for file in files %}
+            <a href="/templates/{{ file }}" class="list-group-item list-group-item-action align-items-center d-flex gap-3 py-3" aria-current="true">
+                <img alt="{{ file }}" class="flex-shrink-0" width="32" height="32"
+                src="{% if '.zip' in file %} {{ url_for('static', filename='bootstrap-icons/file-zip.svg') }}
+                     {% else %}              {{ url_for('static', filename='bootstrap-icons/file-earmark-text.svg') }}
+                     {% endif %}">
+                <h6 class="mb-0">{{ file }}</h6>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
